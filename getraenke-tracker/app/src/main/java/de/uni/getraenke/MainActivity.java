@@ -23,11 +23,15 @@ import java.util.Locale;
 public class MainActivity extends Activity {
 
     public static final String ACTION_PAY = "de.uni.getraenke.PAY";
+    public static final String ACTION_MENSA = "de.uni.getraenke.MENSA";
     private static final int MAX_HISTORY = 200;
 
     private TextView label, balance, stats;
     private LinearLayout history;
     private final Button[] drinkButtons = new Button[3];
+    private MensaTab mensa;
+    private boolean mensaVisible;
+    private boolean resumed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +79,35 @@ public class MainActivity extends Activity {
                 .setNegativeButton("Abbrechen", null)
                 .show());
 
+        mensa = new MensaTab(this);
+        findViewById(R.id.tab_drinks).setOnClickListener(v -> showTab(false));
+        findViewById(R.id.tab_mensa).setOnClickListener(v -> showTab(true));
+        showTab(getSharedPreferences("ui", MODE_PRIVATE).getBoolean("mensa", false));
+        MensaRefreshJob.schedule(this);
+
         if (savedInstanceState == null) handleIntent(getIntent());
+    }
+
+    @Override
+    protected void onDestroy() {
+        mensa.onDestroy();
+        super.onDestroy();
+    }
+
+    private void showTab(boolean showMensa) {
+        boolean changed = showMensa != mensaVisible;
+        mensaVisible = showMensa;
+        getSharedPreferences("ui", MODE_PRIVATE).edit().putBoolean("mensa", showMensa).apply();
+        findViewById(R.id.scroll).setVisibility(showMensa ? View.GONE : View.VISIBLE);
+        findViewById(R.id.mensa_scroll).setVisibility(showMensa ? View.VISIBLE : View.GONE);
+        styleTab(findViewById(R.id.tab_drinks), !showMensa);
+        styleTab(findViewById(R.id.tab_mensa), showMensa);
+        if (showMensa && changed && resumed) mensa.onResume();
+    }
+
+    private void styleTab(Button b, boolean active) {
+        b.setBackgroundResource(active ? R.drawable.btn_pay : R.drawable.btn_neutral);
+        b.setTextColor(active ? 0xFFFFFFFF : getColor(R.color.text));
     }
 
     @Override
@@ -88,11 +120,25 @@ public class MainActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
+        resumed = true;
         refresh();
+        if (mensaVisible) mensa.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        resumed = false;
+        super.onPause();
     }
 
     private void handleIntent(Intent intent) {
+        if (intent != null && ACTION_MENSA.equals(intent.getAction())) {
+            intent.setAction(null);
+            showTab(true);
+            return;
+        }
         if (intent != null && ACTION_PAY.equals(intent.getAction())) {
+            showTab(false);
             intent.setAction(null);
             askCustomPayment();
         }

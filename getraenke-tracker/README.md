@@ -10,11 +10,15 @@ und wie viel man in die Kasse des Vertrauens eingeworfen hat.
   Verlauf (Eintrag antippen → löschen)
 - **Statistik**: Ausgaben pro Woche/Monat als Balkendiagramm (nach Getränk gestapelt, Ø-Linie),
   diese Woche vs. letzte, Monats-Hochrechnung, 4-Wochen-Trend, Lieblingsgetränk, Wochentage
-- Alles bleibt lokal auf dem Handy, keine Internet-Berechtigung
+- **Mensa-Tab**: Speiseplan der TU Mensa Hardenbergstraße und der veganen Mensa (Veggie 2.0)
+  über die OpenMensa-API, Gericht antippen = mit Preis (Studierende/Beschäftigte/Gäste) eintragen,
+  eigene Essen, Ausgaben pro Woche/Monat, Diagramm; Speiseplan wird alle paar Stunden im Hintergrund geladen
+- **Mensa-Widget**: heutige Gerichte als Liste, Antippen trägt ein, Titel antippen wechselt die Mensa
+- Alle Einträge bleiben lokal auf dem Handy; Internet wird nur für den Speiseplan genutzt
 
 ## Installieren
 `Getraenke-Tracker.apk` aufs Handy laden, öffnen, Installation aus unbekannten Quellen erlauben.
-Danach lange auf den Homescreen drücken → Widgets → „Getränke-Konto“.
+Danach lange auf den Homescreen drücken → Widgets → „Getränke-Konto“ bzw. „Mensa heute“.
 
 ## Selbst bauen
 ```

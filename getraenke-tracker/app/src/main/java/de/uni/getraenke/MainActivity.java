@@ -66,7 +66,7 @@ public class MainActivity extends Activity {
             toast(e == null ? "Nichts zum Rückgängigmachen" : e.label() + " (" + Store.euro(e.cents) + ") entfernt");
             refresh();
         });
-        findViewById(R.id.stats).setOnClickListener(v ->
+        findViewById(R.id.open_stats).setOnClickListener(v ->
                 startActivity(new Intent(this, StatsActivity.class)));
         findViewById(R.id.prices).setOnClickListener(v -> editPrices());
         findViewById(R.id.reset).setOnClickListener(v -> new AlertDialog.Builder(this)

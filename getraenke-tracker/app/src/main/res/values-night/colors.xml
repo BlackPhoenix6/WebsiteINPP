@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg">#FF15130F</color>
+    <color name="card">#FF221F1A</color>
+    <color name="widget_bg">#F2221F1A</color>
+    <color name="text">#FFF1ECE4</color>
+    <color name="text_secondary">#FFADA597</color>
+    <color name="divider">#26FFFFFF</color>
+    <color name="debt">#FFFF7B72</color>
+    <color name="credit">#FF7BD389</color>
+    <color name="spezi">#FF9C5A2C</color>
+    <color name="sterni">#FFB08F00</color>
+    <color name="mate">#FFD0602A</color>
+    <color name="pay">#FF2E7D32</color>
+    <color name="neutral_btn">#FF35302A</color>
+</resources>

@@ -1,0 +1,21 @@
+# Getränke-Tracker (Kasse des Vertrauens)
+
+Kleine Android-App plus Homescreen-Widget zum Mitzählen, wie viel man getrunken
+und wie viel man in die Kasse des Vertrauens eingeworfen hat.
+
+- **Spezi** 1,00 € · **Sterni** 1,00 € · **Mate** 1,50 € (Preise in der App änderbar)
+- Kontostand = eingezahlt − getrunken → rot „Noch zu zahlen“ oder grün „Guthaben“
+- Widget: ein Tipp auf Spezi/Sterni/Mate bucht ein Getränk, „€ zahlen“ öffnet die Einzahlung
+- In der App: 1/2/5/10 € oder beliebiger Betrag, „Schulden komplett bezahlt“, Rückgängig,
+  Verlauf (Eintrag antippen → löschen)
+- Alles bleibt lokal auf dem Handy, keine Internet-Berechtigung
+
+## Installieren
+`Getraenke-Tracker.apk` aufs Handy laden, öffnen, Installation aus unbekannten Quellen erlauben.
+Danach lange auf den Homescreen drücken → Widgets → „Getränke-Konto“.
+
+## Selbst bauen
+```
+gradle assembleRelease   # braucht Android SDK (platform 35) in local.properties / ANDROID_HOME
+```
+Ergebnis: `app/build/outputs/apk/release/app-release.apk`

@@ -60,18 +60,21 @@
             android:id="@+id/w_spezi"
             style="@style/WidgetButton"
             android:background="@drawable/btn_spezi"
+            android:textColor="@color/spezi_on"
             android:text="Spezi\n0×" />
 
         <Button
             android:id="@+id/w_sterni"
             style="@style/WidgetButton"
             android:background="@drawable/btn_sterni"
+            android:textColor="@color/sterni_on"
             android:text="Sterni\n0×" />
 
         <Button
             android:id="@+id/w_mate"
             style="@style/WidgetButton"
             android:background="@drawable/btn_mate"
+            android:textColor="@color/mate_on"
             android:text="Mate\n0×" />
 
         <Button

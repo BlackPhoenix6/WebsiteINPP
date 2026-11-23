@@ -87,7 +87,7 @@ public class StatsActivity extends Activity {
     }
 
     private void styleToggle(Button b, boolean active) {
-        b.setBackgroundResource(active ? R.drawable.btn_spezi : R.drawable.btn_neutral);
+        b.setBackgroundResource(active ? R.drawable.btn_pay : R.drawable.btn_neutral);
         b.setTextColor(active ? 0xFFFFFFFF : getColor(R.color.text));
     }
 
@@ -282,7 +282,7 @@ public class StatsActivity extends Activity {
             sum += w[i];
             if (w[i] > w[best]) best = i;
         }
-        wc.setData(Stats.WEEKDAYS, new int[][]{w}, new int[]{getColor(R.color.mate)}, -1, -1);
+        wc.setData(Stats.WEEKDAYS, new int[][]{w}, new int[]{getColor(R.color.pay)}, -1, -1);
         final int bestDay = best, total = Math.max(1, sum);
         String base = "Am meisten am " + Stats.WEEKDAYS_LONG[bestDay] + " ("
                 + Math.round(w[bestDay] * 100f / total) + " % deiner Ausgaben)";

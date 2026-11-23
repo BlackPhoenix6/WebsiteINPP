@@ -83,18 +83,21 @@
             <Button
                 android:id="@+id/b_spezi"
                 style="@style/BigButton"
-                android:background="@drawable/btn_spezi" />
+                android:background="@drawable/btn_spezi"
+            android:textColor="@color/spezi_on" />
 
             <Button
                 android:id="@+id/b_sterni"
                 style="@style/BigButton"
-                android:background="@drawable/btn_sterni" />
+                android:background="@drawable/btn_sterni"
+            android:textColor="@color/sterni_on" />
 
             <Button
                 android:id="@+id/b_mate"
                 style="@style/BigButton"
                 android:layout_marginEnd="0dp"
-                android:background="@drawable/btn_mate" />
+                android:background="@drawable/btn_mate"
+            android:textColor="@color/mate_on" />
         </LinearLayout>
 
         <!-- Einzahlen -->

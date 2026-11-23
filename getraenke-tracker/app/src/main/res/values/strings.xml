@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Getränke</string>
+    <string name="widget_name">Getränke-Konto</string>
+    <string name="widget_desc">Spezi, Sterni und Mate mit einem Tipp eintragen</string>
+    <string name="mensa_widget_name">Mensa heute</string>
+    <string name="mensa_widget_desc">Heutige Gerichte – antippen zum Eintragen</string>
+</resources>

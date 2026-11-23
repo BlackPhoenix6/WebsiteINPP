@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="10dp">
+
+        <Button
+            android:id="@+id/tab_drinks"
+            style="@style/ToggleButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="42dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:text="🥤 Getränke"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/tab_mensa"
+            style="@style/ToggleButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="42dp"
+            android:layout_weight="1"
+            android:text="🍽 Mensa"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ScrollView
+            android:id="@+id/scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:text="Kasse des Vertrauens"
+                    android:textColor="@color/text"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <!-- Kontostand -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/card_bg"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Guthaben"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/balance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0,00 €"
+                        android:textColor="@color/credit"
+                        android:textSize="44sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/stats"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/open_stats"
+                    style="@style/SmallButton"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="12dp"
+                    android:text="📊  Statistik ansehen" />
+
+                <!-- Getränke -->
+                <TextView
+                    style="@style/Section"
+                    android:text="Getränk genommen" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="96dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/b_spezi"
+                        style="@style/BigButton"
+                        android:background="@drawable/btn_spezi"
+                    android:textColor="@color/spezi_on" />
+
+                    <Button
+                        android:id="@+id/b_sterni"
+                        style="@style/BigButton"
+                        android:background="@drawable/btn_sterni"
+                    android:textColor="@color/sterni_on" />
+
+                    <Button
+                        android:id="@+id/b_mate"
+                        style="@style/BigButton"
+                        android:layout_marginEnd="0dp"
+                        android:background="@drawable/btn_mate"
+                    android:textColor="@color/mate_on" />
+                </LinearLayout>
+
+                <!-- Einzahlen -->
+                <TextView
+                    style="@style/Section"
+                    android:text="Geld eingeworfen" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:orientation="horizontal">
+
+                    <Button android:id="@+id/p1" style="@style/PayButton" android:text="1 €" />
+                    <Button android:id="@+id/p2" style="@style/PayButton" android:text="2 €" />
+                    <Button android:id="@+id/p5" style="@style/PayButton" android:text="5 €" />
+                    <Button android:id="@+id/p10" style="@style/PayButton" android:text="10 €" />
+                    <Button
+                        android:id="@+id/p_other"
+                        style="@style/PayButton"
+                        android:layout_marginEnd="0dp"
+                        android:text="…" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/settle"
+                    style="@style/SmallButton"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:text="Schulden komplett bezahlt" />
+
+                <Button
+                    android:id="@+id/undo"
+                    style="@style/SmallButton"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:text="Letzten Eintrag rückgängig" />
+
+                <!-- Verlauf -->
+                <TextView
+                    style="@style/Section"
+                    android:text="Verlauf (antippen zum Löschen)" />
+
+                <LinearLayout
+                    android:id="@+id/history"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/card_bg"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="4dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/prices"
+                        style="@style/SmallButton"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
+                        android:text="Preise ändern" />
+
+                    <Button
+                        android:id="@+id/reset"
+                        style="@style/SmallButton"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="Alles zurücksetzen" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center"
+                    android:text="Tipp: Widget „Getränke-Konto“ auf den Homescreen ziehen."
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </ScrollView>
+
+        <include layout="@layout/tab_mensa" />
+    </FrameLayout>
+</LinearLayout>

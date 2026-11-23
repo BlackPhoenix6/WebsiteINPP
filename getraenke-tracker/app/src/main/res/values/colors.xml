@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg">#FFF4F5FA</color>
+    <color name="card">#FFFFFFFF</color>
+    <color name="widget_bg">#F7FFFFFF</color>
+    <color name="text">#FF1B1D2A</color>
+    <color name="text_secondary">#FF6E7287</color>
+    <color name="divider">#14000000</color>
+    <color name="debt">#FFE5484D</color>
+    <color name="credit">#FF1F9D55</color>
+    <color name="ripple">#1F000000</color>
+
+    <!-- Diagrammfarben -->
+    <color name="spezi">#FFF2774E</color>
+    <color name="sterni">#FFF0B429</color>
+    <color name="mate">#FF22A6A1</color>
+
+    <!-- Knöpfe: heller Hintergrund + dunkle Schrift -->
+    <color name="spezi_container">#FFFFE5DB</color>
+    <color name="spezi_on">#FFA3391A</color>
+    <color name="sterni_container">#FFFFF0C4</color>
+    <color name="sterni_on">#FF855600</color>
+    <color name="mate_container">#FFD6F3F1</color>
+    <color name="mate_on">#FF0B6461</color>
+
+    <color name="pay">#FF5B5BD6</color>
+    <color name="neutral_btn">#FFE9EAF2</color>
+</resources>

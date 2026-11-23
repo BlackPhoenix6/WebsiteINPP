@@ -8,6 +8,8 @@ und wie viel man in die Kasse des Vertrauens eingeworfen hat.
 - Widget: ein Tipp auf Spezi/Sterni/Mate bucht ein Getränk, „€ zahlen“ öffnet die Einzahlung
 - In der App: 1/2/5/10 € oder beliebiger Betrag, „Schulden komplett bezahlt“, Rückgängig,
   Verlauf (Eintrag antippen → löschen)
+- **Statistik**: Ausgaben pro Woche/Monat als Balkendiagramm (nach Getränk gestapelt, Ø-Linie),
+  diese Woche vs. letzte, Monats-Hochrechnung, 4-Wochen-Trend, Lieblingsgetränk, Wochentage
 - Alles bleibt lokal auf dem Handy, keine Internet-Berechtigung
 
 ## Installieren

@@ -44,11 +44,93 @@
                 android:textSize="14sp" />
         </LinearLayout>
 
-        <!-- Mensa-Auswahl -->
+        <!-- Diagramm -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/card_bg"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mensa pro Woche"
+                android:textColor="@color/text"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <de.uni.getraenke.BarChartView
+                android:id="@+id/m_chart"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/m_chart_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Zuletzt gegessen -->
+        <TextView
+            style="@style/Section"
+            android:text="Zuletzt gegessen (antippen zum Löschen)" />
+
+        <LinearLayout
+            android:id="@+id/m_history"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_bg"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="4dp" />
+
+        <Button
+            android:id="@+id/m_more"
+            style="@style/SmallButton"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:text="Alle anzeigen"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/m_custom"
+                style="@style/SmallButton"
+                android:layout_width="0dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:text="＋ Eigenes Essen" />
+
+            <Button
+                android:id="@+id/m_undo"
+                style="@style/SmallButton"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="Rückgängig" />
+        </LinearLayout>
+
+        <!-- Speiseplan -->
+        <TextView
+            style="@style/Section"
+            android:layout_marginTop="24dp"
+            android:text="Speiseplan"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <Button
@@ -78,7 +160,6 @@
                 android:text="⚙" />
         </LinearLayout>
 
-        <!-- Tag -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -136,64 +217,5 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" />
-
-        <Button
-            android:id="@+id/m_custom"
-            style="@style/SmallButton"
-            android:layout_width="match_parent"
-            android:layout_marginTop="16dp"
-            android:text="Eigenes Essen eintragen" />
-
-        <Button
-            android:id="@+id/m_undo"
-            style="@style/SmallButton"
-            android:layout_width="match_parent"
-            android:layout_marginTop="8dp"
-            android:text="Letztes Essen rückgängig" />
-
-        <!-- Diagramm -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/card_bg"
-            android:orientation="vertical"
-            android:padding="16dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mensa pro Woche"
-                android:textColor="@color/text"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <de.uni.getraenke.BarChartView
-                android:id="@+id/m_chart"
-                android:layout_width="match_parent"
-                android:layout_height="170dp"
-                android:layout_marginTop="8dp" />
-
-            <TextView
-                android:id="@+id/m_chart_detail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:textColor="@color/text_secondary"
-                android:textSize="14sp" />
-        </LinearLayout>
-
-        <TextView
-            style="@style/Section"
-            android:text="Gegessen (antippen zum Löschen)" />
-
-        <LinearLayout
-            android:id="@+id/m_history"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/card_bg"
-            android:orientation="vertical"
-            android:paddingHorizontal="16dp"
-            android:paddingVertical="4dp" />
     </LinearLayout>
 </ScrollView>

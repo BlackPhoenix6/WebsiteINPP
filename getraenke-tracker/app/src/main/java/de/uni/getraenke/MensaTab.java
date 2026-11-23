@@ -28,6 +28,7 @@ import java.util.concurrent.Executors;
 final class MensaTab {
 
     private static final int WEEKS = 8;
+    private static final int RECENT = 3;
 
     private final Activity a;
     private final ExecutorService bg = Executors.newSingleThreadExecutor();
@@ -39,6 +40,7 @@ final class MensaTab {
     private final BarChartView chart;
 
     private int dayOffset = 0;
+    private boolean showAll = false;
     private int loadToken = 0;
     private Stats.Buckets buckets;
 
@@ -68,6 +70,10 @@ final class MensaTab {
             refreshSpending();
         });
         chart.setOnSelectListener(this::showWeek);
+        a.findViewById(R.id.m_more).setOnClickListener(v -> {
+            showAll = !showAll;
+            refreshSpending();
+        });
     }
 
     void onResume() {
@@ -273,13 +279,18 @@ final class MensaTab {
             TextView empty = text("Noch nichts eingetragen", 14, R.color.text_secondary);
             empty.setPadding(0, dp(14), 0, dp(14));
             history.addView(empty);
+            a.findViewById(R.id.m_more).setVisibility(View.GONE);
             return;
         }
         SimpleDateFormat fmt = new SimpleDateFormat("EE dd.MM. HH:mm", Locale.GERMANY);
+        int limit = showAll ? 200 : RECENT;
         int shown = 0;
-        for (int i = list.size() - 1; i >= 0 && shown < 100; i--, shown++) {
+        for (int i = list.size() - 1; i >= 0 && shown < limit; i--, shown++) {
             history.addView(historyRow(list.get(i), fmt, shown > 0));
         }
+        Button more = a.findViewById(R.id.m_more);
+        more.setVisibility(list.size() > RECENT ? View.VISIBLE : View.GONE);
+        more.setText(showAll ? "Weniger anzeigen" : "Alle anzeigen (" + list.size() + ")");
     }
 
     private void showWeek(int i) {
